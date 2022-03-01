@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const express = require("express");
 const { APP_PORT, MONGODB_URI, MONGODB_OPTIONS } = require("./config");
 
 const createApp = require("./app");

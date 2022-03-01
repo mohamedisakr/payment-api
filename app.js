@@ -1,5 +1,5 @@
 const express = require("express");
-const { serverError, notFound, active, catchAsync } = require("./middleware");
+const { serverError, notFound } = require("./middleware");
 const { payment, home } = require("./routes");
 
 const createApp = () => {
