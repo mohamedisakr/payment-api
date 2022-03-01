@@ -21,7 +21,7 @@ const cvv = Joi.string()
   .required();
 const amount = Joi.number().positive().required();
 
-exports.paymentSchema = {
+exports.paymentSchemaValidation = {
   [Segments.BODY]: Joi.object().keys({
     creditCard,
     expirationDate,
