@@ -12,8 +12,10 @@
   "dependencies": {
     "@joi/date": "^2.1.0",
     "celebrate": "^15.0.1",
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "joi": "^17.6.0",
-    "mongoose": "^6.2.4"
+    "mongoose": "^6.2.4",
+    "morgan": "^1.10.0"
   }
 }

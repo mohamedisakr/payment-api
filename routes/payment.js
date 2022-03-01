@@ -9,19 +9,24 @@ router.post(
   catchAsync(async (req, res) => {
     await validate(paymentSchemaValidation, req.body);
     const { creditCard, expDate, cvv, amount } = req.body;
+    try {
+      const paymentToAdd = await Payment.create({
+        creditCard,
+        expDate,
+        cvv,
+        amount,
+      });
 
-    const paymentToAdd = await Payment.create({
-      creditCard,
-      expDate,
-      cvv,
-      amount,
-    });
+      const sanitizedPayment = {
+        RequestId: paymentToAdd._id,
+        Amount: paymentToAdd.amount,
+      };
 
-    const payment = {
-      RequestId: paymentToAdd._id,
-      Amount: paymentToAdd.amount,
-    };
-    return res.status(201).json(payment);
+      return res.status(201).json(sanitizedPayment);
+    } catch (err) {
+      console.error(`Payment creation failed ${JSON.stringify(err, null, 4)}`);
+      return res.status(400).json({ message: `Payment creation failed` });
+    }
   })
 );
 
