@@ -1,17 +1,12 @@
-const {Router} = require('express')
-const {catchAsync, auth} = require('../middleware')
-const {User} = require('../models')
-const router = Router()
+const { Router } = require("express");
+const { catchAsync } = require("../middleware");
+const router = Router();
 
 router.get(
-  '/home',
-  auth,
+  "/",
   catchAsync(async (req, res) => {
-    const user = await User.findById(req.session.userId)
-      .select('-password -__v')
-      .exec()
-    return res.status(200).json(user)
-  }),
-)
+    return res.status(200).json({ message: "Payment API" });
+  })
+);
 
-module.exports = {router}
+module.exports = { router };

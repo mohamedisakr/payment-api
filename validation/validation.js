@@ -1,7 +1,7 @@
 const { celebrate, SchemaOptions, Modes, Segments } = require("celebrate"); //, Joi
 const Joi = require("joi").extend(require("@joi/date"));
 
-export const validate = (schema) =>
+exports.validate = (schema) =>
   celebrate(
     schema,
     {

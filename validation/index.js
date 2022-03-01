@@ -1,4 +1,5 @@
-const {registerSchema, loginSchema} = require('./auth')
-const {validate} = require('./joi')
+// const {registerSchema, loginSchema} = require('./auth')
+const { validate } = require("./joi");
+const { paymentSchemaValidation } = require("./validation");
 
-module.exports = {registerSchema, loginSchema, validate}
+module.exports = { paymentSchemaValidation, validate };

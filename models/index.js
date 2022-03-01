@@ -1,6 +1,4 @@
-const User = require('./User')
+// const User = require("./User");
+const Payment = require("./payment");
 
-// const User = require('./user')
-// User
-
-module.exports = {User}
+module.exports = { Payment };

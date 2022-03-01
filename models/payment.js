@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const paymentSchema = new Schema(
   {
     creditCard: Number,
-    expirationDate: Date,
+    expDate: Date,
     cvv: Number,
     amount: Number,
   },
