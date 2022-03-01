@@ -6,12 +6,10 @@ const createApp = () => {
   const app = express();
   app.use(express.json());
 
-  // app.use(catchAsync(active));
   app.use(home);
   app.use(payment);
 
   app.use(notFound);
-
   app.use(serverError);
   return app;
 };
